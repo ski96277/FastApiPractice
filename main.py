@@ -2,6 +2,8 @@ from typing import Optional
 
 from fastapi import FastAPI
 
+from createblogmodel import CreateBlogModel
+
 # Create instance of FastAPI
 app = FastAPI()
 
@@ -36,3 +38,9 @@ def show(id: int):
 @app.get('/blog/{id}/comments')
 def fetch_comments(id):
     return {'blog_id': id, 'data': {'1', '2'}, }
+
+
+@app.post('/blog/')
+async def create_blog(item: CreateBlogModel):
+
+    return item

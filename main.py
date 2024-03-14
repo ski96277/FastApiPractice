@@ -35,12 +35,13 @@ def show(id: int):
     return {'blog_id': int(id)}
 
 
+# path parameter api
 @app.get('/blog/{id}/comments')
 def fetch_comments(id):
     return {'blog_id': id, 'data': {'1', '2'}, }
 
 
+# pass body parameter
 @app.post('/blog/')
 async def create_blog(item: CreateBlogModel):
-
     return item
